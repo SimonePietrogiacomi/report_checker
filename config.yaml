@@ -1,0 +1,40 @@
+---
+auth:
+  website_link: https://www.website.com
+  logged_in_website_title: " "
+  username_tag_xpath: //*xpath_to_username_tag
+  username_value: your_username
+  password_tag_xpath: //*xpath_to_password_tag
+  password_value: your_password
+  submit_tag_xpath: /html/body/xpath/to/submit/tag
+
+webdriver:
+  Firefox: /path/to/firefox/driver/geckodriver
+  Chrome: /path/to/chrome/driver/chromedriver
+  Opera: /path/to/opera/driver/operadriver
+  Edge: /path/to/edge/driver/msedgedriver.exe
+  PhantomJS: /path/to/phantomjs/driver/phantomjs
+
+configurations:
+  log_file_name: generic.log
+  preferred_browser_name: Firefox
+  headless: true
+  # browser that doesn't need the "headless" option since they are only headless
+  native_headless_browser:
+    - PhantomJS
+  target_xpath: /html/body/xpath/to/target
+  target_string: target_current_text
+  logout_xpaths:
+    - /html/body/xpaths/to/logout/button
+  # min and max number of refresh to perform
+  number_of_refreshes:
+    - 2
+    - 4
+  # how many seconds between each refresh
+  refresh_page_sleep_time:
+    - 2
+    - 6
+  # seconds between each "open browser, login, check changes, logout"
+  outer_loop_sleep_time:
+    - 300
+    - 1200
